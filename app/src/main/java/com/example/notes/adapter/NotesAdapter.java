@@ -50,30 +50,25 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         //Title
         notesViewHolder.textViewTitle.setText(note.getTitle());
         //Description
-        if (note.getDescription().isEmpty()) {
-            notesViewHolder.textViewDesc.setVisibility(View.GONE);
-        } else {
-            notesViewHolder.textViewDesc.setText(note.getDescription());
-        }
+        notesViewHolder.textViewDesc.setText(note.getDescription());
         //Date
         notesViewHolder.textViewDate.setText(Note.getDayAsString(note.getDate()));
-        //Image
-        int color;
-        switch (note.getPriority()) {
-            case 0:
-                color = notesViewHolder.itemView.getResources().getColor(R.color.priorityLow);
-                break;
-            case 1:
-                color = notesViewHolder.itemView.getResources().getColor(R.color.priorityMedium);
-                break;
-            case 2:
-                color = notesViewHolder.itemView.getResources().getColor(R.color.priorityHigh);
-                break;
-            default:
-                color = notesViewHolder.itemView.getResources().getColor(R.color.colorPrimary);
-                break;
-        }
+        //Background color
+        int color = getPriorityColor(notesViewHolder.itemView, note.getPriority());
         notesViewHolder.textViewTitle.setBackgroundColor(color);
+    }
+
+    private int getPriorityColor(View view, int priority) {
+        switch (priority) {
+            case 0:
+                return view.getResources().getColor(R.color.priorityLow);
+            case 1:
+                return view.getResources().getColor(R.color.priorityMedium);
+            case 2:
+                return view.getResources().getColor(R.color.priorityHigh);
+            default:
+                return view.getResources().getColor(R.color.colorPrimary);
+        }
     }
 
     @Override
