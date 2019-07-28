@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="day_of_week">Day of week</string>
+    <string name="low">LOW</string>
+    <string name="medium">MEDIUM</string>
+    <string name="high">HIGH</string>
+    <string name="choose_priority">Choose priority</string>
+    <string name="add_note">Add note</string>
+    <string name="input_description_hint">Input description</string>
+    <string name="input_title_hint">Input title</string>
+    <string name="invalid_title">Invalid title</string>
+    <string name="invalid_description">Invalid description</string>
+
+    <string-array name="week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+</resources>
